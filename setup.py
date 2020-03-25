@@ -3,9 +3,9 @@ from setuptools import setup
 from distutils.extension import Extension
 
 import sys
-if 'setuptools.extension' in sys.modules:
-    m = sys.modules['setuptools.extension']
-    m.Extension.__dict__ = m._Extension.__dict__
+#if 'setuptools.extension' in sys.modules:
+#    m = sys.modules['setuptools.extension']
+#    m.Extension.__dict__ = m._Extension.__dict__
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -34,6 +34,6 @@ setup(
     url = "http://code.google.com/p/poly2tri/",
 
     ext_modules = [mod_math],
-    setup_requires = ["cython==0.14.1", "setuptools_cython==0.2.1"],
-    install_requires = ["cython==0.14.1"],
+    setup_requires = ["cython==0.29.15", "cython-setuptools==0.2.3"],
+    install_requires = ["cython==0.29.15"],
 )
